@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorator="layout">
+<head>
+<title>Content page 1</title>
+<script src="content-script.js"></script>
+</head>
+<body>
+  <!-- https://github.com/ultraq/thymeleaf-layout-dialect -->
+  <!-- http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#what-is-thymeleaf -->
+  <section layout:fragment="content">
+    <p>This is a paragraph from content page 1</p>
+    <div
+      th:fragment="frag"
+      th:with="user='tianyingchun'">
+      <span th:text="${user}"></span>
+    </div>
+    <!--/*-->
+    <p th:include="this::frag"></p>
+    <!--/*/-->
+    <p th:text="${serverTime}">dddd</p>
+    <p>
+      Today is: <span th:text="${today}">13 february 2011</span>
+    </p>
+    <div th:class="content">...</div>
+  </section>
+  <footer>
+    <p layout:fragment="custom-footer">This is some footer content
+      from content page 1</p>
+  </footer>
+</body>
+</html>
