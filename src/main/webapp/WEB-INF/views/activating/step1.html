@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorator="layout">
+<head>
+<title>Content page 1</title>
+
+<link rel="stylesheet" type="text/css" href="http://localhost:3001/public/docs/index/bundle.css" th:href="@{http://localhost:3001/public/docs/index/bundle.css}" />
+<script type="text/javascript" th:src="@{http://localhost:3001/public/docs/index/bundle.js}"></script>
+
+</head>
+<body>
+
+  <!-- https://github.com/ultraq/thymeleaf-layout-dialect -->
+  <!-- http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#what-is-thymeleaf -->
+  <div layout:fragment="content">
+ 	 step1.html
+  </div>
+  <footer>
+    <p layout:fragment="footer">This is some footer content
+      from content page 1</p>
+  </footer>
+</body>
+</html>

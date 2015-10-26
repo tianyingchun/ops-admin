@@ -5,12 +5,41 @@
   layout:decorator="layout">
 <head>
 <title>Content page 1</title>
-<script src="content-script.js"></script>
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/shared/less/public/common.css"/>
+<link rel="stylesheet" type="text/css" href="http://localhost:3001/public/docs/index/bundle.css" />
+
+<script type="text/javascript" src="http://localhost:4001/public/vendors/esshim/es5-shim.min.js"></script>
+<script type="text/javascript" src="http://localhost:4001/public/vendors/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://localhost:3001/public/docs/index/bundle.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+	$(function(){
+		
+		
+	})
+</script>
 </head>
 <body>
+
+
+	
+
   <!-- https://github.com/ultraq/thymeleaf-layout-dialect -->
   <!-- http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#what-is-thymeleaf -->
   <section layout:fragment="content">
+  
+  	<div class="container">
+	  <div class="col-md-4">4</div>
+	  <div class="col-md-8">8</div>
+	</div>
+	     
+	<div data-pagination="{'simple': false, 'current': 5, 'pageSize': 10, 'total': 100}">....</div>
+  
     <p>This is a paragraph from content page 1</p>
     <div
       th:fragment="frag"

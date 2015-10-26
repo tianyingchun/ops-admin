@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Content page 1</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/shared/less/public/common.css"/>
+<script type="text/javascript" src="http://localhost:3001/public/docs/index/bundle.css"></script>
+
+<script type="text/javascript" src="http://localhost:4001/public/vendors/esshim/es5-shim.min.js"></script>
+<script type="text/javascript" src="http://localhost:4001/public/vendors/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://localhost:3001/public/docs/index/bundle.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+	$(function(){
+		
+		
+	})
+</script>
+
+
+<style type="text/css">
+	.nav-title{
+		clear: both;
+	}
+	.nav-info{
+		 border-radius: 10px;
+		 width: 150px;
+		 height:35px;
+		 line-height: 35px;
+		 margin-bottom: 10px;
+		 padding-left: 5px;
+		 float:right;
+		 background-color: rgb(154,170,170);
+		 color:white;
+		 font-weight:bold;
+		 letter-spacing: 1px;
+	}
+	.nav-info-select{
+		background-color: rgb(123,175,27);
+		color:white;
+	}
+	
+	.container{
+		padding:0;
+		border:1px solid #ccc;
+		height:600px;
+		width:1024px
+	}
+	
+	.container-header{
+		height:70px;
+		line-height:70px;
+		font-size:25px;
+		padding-left:10px;
+		font-weight:bold;
+		background-color: rgb(123,175,27);
+		width:100%;
+		color:white;
+		letter-spacing: 5px;
+	
+	}
+	
+	.container-con {
+		padding-top:80px;
+	
+	}
+	
+	.inp-inp{
+		height:35px;
+		letter-spacing: 1px;
+	}
+	
+	.inp-lable{
+		text-align: right;
+		height:35px;
+		line-height: 35px;
+	}
+	
+	.info-item{
+		height:40px;
+		color:rgb(135,135,135);
+	}
+
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="container-header">白条激活</div>
+		<div class="container-con">
+			
+			<div class="col-md-4">
+		  	 
+		  		<div class="nav-title" >
+		  			<div class="nav-info nav-info-select">
+		  				<!-- image -->
+		  				1.填写身份信息
+		  			</div>
+		  			
+		  		</div>
+		  		<div class="nav-title">
+			  		<div class="nav-info">
+			  			2.工作学历信息
+			  		</div>
+		  		</div>
+		  		<div class="nav-title">
+			  		<div class="nav-info">
+			  			3.联系人信息
+			  		</div>
+		  		</div>
+		  
+		  </div>
+		  <div class="col-md-8">
+		  	 
+	          
+	          <div class="form-group info-item">
+	            <label for="user-email" class="col-md-3 am-form-label inp-inp inp-lable">
+	            	<span style="color:red; padding-right: 2px;font-weight:bold;">*</span>真实姓名:</label>
+	            <div class="col-md-9">
+	              <input class="inp-inp" type="email" id="user-email" placeholder="本人姓名（=10汉字）" />
+	              <small>验证通过</small>
+	            </div>
+	          </div>
+	          
+	          <div class="form-group info-item">
+	            <label for="user-email" class="col-md-3 am-form-label inp-lable inp-inp inp-lable">电子邮件:</label>
+	            <div class="col-md-9">
+	              <input type="email"  class="inp-inp" id="user-email" placeholder="输入你的电子邮件 / Email"/>
+	              <small>邮箱你懂得...</small>
+	            </div>
+	          </div>
+	          
+	          <div class="form-group info-item">
+	            <label for="user-email" class="col-md-3 am-form-label inp-lable">电子邮件:</label>
+	            <div class="col-md-9">
+	              <input type="email" class="inp-inp" id="user-email" placeholder="输入你的电子邮件 / Email"/>
+	              <small>邮箱你懂得...</small>
+	            </div>
+	          </div>
+	          
+	          <div class="form-group info-item">
+	            <label for="user-email" class="col-md-3 am-form-label inp-lable">银行预留手机号:</label>
+	            <div class="col-md-9">
+	              <input type="email" class="inp-inp" id="user-email" placeholder=""/>
+	              <small style="padding-left: 20px;">
+	              		<button type="button"  class="btn btn-primary">获取验证码</button>
+	              </small>
+	            </div>
+	          </div>
+	          
+	          <div class="form-group info-item">
+	            <label for="user-email" class="col-md-3 am-form-label inp-lable">短信验证码:</label>
+	            <div class="col-md-9">
+	              <input type="email" class="inp-inp" id="user-email" placeholder=""/>
+	              <small style="padding-left: 20px;">
+	              		
+	              </small>
+	            </div>
+	          </div>
+	          
+	           <div class="form-group info-item">
+	            <label for="user-email" class="col-md-3 am-form-label inp-lable"></label>
+	            <div class="col-md-9">
+	              <div class="checkbox">
+				      <label>
+				        <input type="checkbox" name="doc-radio-1" value="option1" />
+				          同意服务协议
+				      </label>
+			      </div>
+	            </div>
+	          </div>
+	          
+	          <div class="form-group info-item">
+	            
+	            <div class="col-md-5 col-md-push-2">
+	              	<button type="button" class="btn btn-primary" style="width: 200px;">下一步</button>
+	            </div>
+	          </div>
+	          
+	          
+		  		
+		  
+		  </div>
+			
+			
+			
+		</div>
+	
+	  
+	</div>
+
+	
+
+</body>
+</html>

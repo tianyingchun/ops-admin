@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<title>Layout page</title>
-
-<script src="common-script.js"></script>
+<title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">后台管理系统</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="http://localhost:4001/shared/less/public/common.css"/>
+<script type="text/javascript" src="http://localhost:4001/public/vendors/esshim/es5-shim.min.js"></script>
+<script type="text/javascript" src="http://localhost:4001/public/vendors/jquery/jquery.min.js"></script>
 </head>
 <body>
-	<header>
-		<h1>My website</h1>
-	</header>
-	<section layout:fragment="content">
-		<p>Page content goes here</p>
-	</section>
-	<footer>
-		<p>My footer</p>
-		<p layout:fragment="custom-footer">Custom footer here</p>
-	</footer>
+	<div layout:include="header::header"></div>
+	<div class="mainwrapper">
+		<div layout:fragment="content">
+			<p>Page content goes here</p>
+		</div>
+	</div>
+	<div layout:include="footer::footer"></div>
+	<script layout:fragment="script"></script>
 </body>
 </html>
