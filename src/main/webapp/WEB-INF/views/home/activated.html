@@ -6,20 +6,154 @@
 <head>
 <title>Content page 1</title>
 
-<link rel="stylesheet" type="text/css" href="http://localhost:3001/public/docs/index/bundle.css" th:href="@{http://localhost:3001/public/docs/index/bundle.css}" />
-<script type="text/javascript" th:src="@{http://localhost:3001/public/docs/index/bundle.js}"></script>
+<link rel="stylesheet" type="text/css"  th:href="@{http://localhost:4002/public/home/activated/bundle.css}" />
+<script type="text/javascript" th:src="@{http://localhost:4002/public/home/activated/bundle.js}"></script>
 
 </head>
 <body>
 
   <!-- https://github.com/ultraq/thymeleaf-layout-dialect -->
   <!-- http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#what-is-thymeleaf -->
-  <div layout:fragment="content">
- 	 activated.html
+  <div layout:fragment="content" class="activated">
+ 	 <div class="tab_hd">https://github.com/ultraq/thymeleaf-layout-dialect</div>
+ 	  <input type="button" value="测试" id="tt" onclick="tt()"/>
+ 	  <input type="button" value="测试2" id="tt2" onclick="mm()"/>
+ 	  
+ 	   <div th:replace="recommend :: 
+ 	   	recommend-3(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+ 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG1',
+ 	   		img2='http://localhost:4002/public/home/assets/activated/mascot.png',
+ 	   		info2='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG2',
+ 	   		img3='http://localhost:4002/public/home/assets/activated/mascot.png',
+ 	   		info3='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG3')"></div>
+ 	   
+ 	   
+ 	   <div class="container">
+			<div th:replace="recommend :: 
+		 	   	recommend-3-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+		 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG1')"></div>
+			<div th:replace="recommend :: 
+		 	   	recommend-3-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+		 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG2')"></div>
+			<div th:replace="recommend :: 
+		 	   	recommend-3-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+		 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG3')"></div>
+		</div>
+		
+		<div class="container" style="width:800px;">
+			<div th:replace="recommend :: 
+		 	   	recommend-2-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+		 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG1')"></div>
+			<div th:replace="recommend :: 
+		 	   	recommend-2-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+		 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG2')"></div>
+			
+		</div>
+		
+		
+		
+	   
+	   
+	   
+	       
+		<div class="tabs" data-tabs='{"autoRotate": false, "launchOnMouseEnter": false}'>
+			<ul class="tabs-nav nav nav-tabs">
+			  <li class="active"><a href="#tab1">Gallery</a></li>
+			  <li><a href="#tab2">Submit</a></li>
+			  <li><a href="#tab3">Resources</a></li>
+			  <li><a href="#tab4">Contact</a></li>
+			</ul>
+			<div class="tabs-bd">
+			  <div id="tab1" class="tab-panel active">
+			    	<div>
+						<ul class="timeline">
+						  <li class="timeline-item">
+						    <div style="display:block;" class="timeline-item-tail"></div>
+						    <div class="timeline-item-head default"></div>
+						    <div class="timeline-item-content">创建服务现场 2015-09-01</div>
+						  </li>
+						  <li class="timeline-item">
+						    <div style="display:block;" class="timeline-item-tail"></div>
+						    <div class="timeline-item-head primary"></div>
+						    <div class="timeline-item-content">创建服务现场 2015-09-01</div>
+						  </li>
+						  <li class="timeline-item">
+						    <div style="display:block;" class="timeline-item-tail"></div>
+						    <div class="timeline-item-head success"></div>
+						    <div class="timeline-item-content">
+						      	<div class="container">
+						      		<p>技术测试异常1</p>
+									<div th:replace="recommend :: 
+								 	   	recommend-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+								 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG1')"></div>
+								</div>
+								
+						    </div>
+						  </li>
+						  <li class="timeline-item">
+						    <div style="display:block;" class="timeline-item-tail"></div>
+						    <div class="timeline-item-head warning"></div>
+						    <div class="timeline-item-content">
+						      <p>技术测试异常1</p>
+						      <p>技术测试异常2</p>
+						      <p>技术测试异常3 2015-09-01</p>
+						    </div>
+						  </li>
+						  <li class="timeline-item">
+						    <div style="display:block;" class="timeline-item-tail"></div>
+						    <div class="timeline-item-head danger"></div>
+						    <div class="timeline-item-content">
+						      <p>技术测试异常1</p>
+						      <p>技术测试异常2</p>
+						      <p>技术测试异常3 2015-09-01</p>
+						    </div>
+						  </li>
+						  <li class="timeline-item">
+						    <div style="display:none;" class="timeline-item-tail"></div>
+						    <div class="timeline-item-head info"></div>
+						    <div class="timeline-item-content">
+						      <p>技术测试异常1</p>
+						      <p>技术测试异常2</p>
+						      <p>技术测试异常3 2015-09-01</p>
+						    </div>
+						  </li>
+						</ul>
+					   
+					   </div>
+			    
+			    
+			    
+			    
+			    
+			  </div>
+			  <div id="tab2" class="tab-panel">
+			    <h2>Submit</h2>
+			    <h3><a href="#">www.htmldrive.net</a></h3>
+			    <p>Grandma been has bankrupt said hospitality fence everlastinwrestlin rodeo redblooded chitlins marshal. Boobtube soap her hootch lordy cow, rattler. </p>
+			    <p>Rottgut havin ignorant go, hee-haw shiney jail fetched hillbilly havin. Bacon no cowpoke tobaccee horse water rightly trailer tools git hillbilly. </p>
+			    <p>Jezebel had whiskey snakeoil, askin weren, skanky aunt townfolk fetched. Fit tractor, the</p>
+			  </div>
+			  <div id="tab3" class="tab-panel">
+			    <h2>Resources</h2>
+			    <h3><a href="#">www.htmldrive.net</a></h3>
+			    <p>Dirt tools thar, pot buffalo put jehosephat rent, ya pot promenade. Come pickled far greasy fightin wirey, it poor  ou  dogs backwoods, city-slickers me afford boxcar fat, dumb sittindrive rustle slap, tornado. Fuss stinky knickers whomcity-slickers sherrif darn ignorant tobaccee round-up old buckshot that. </p>
+			    <p>Deep-fried over shootin work cowpoke poor, wuz, whiskey got wirey that. Shot beer, broke hot gritts. Drunk, em moonshine his commenci e. Fer tonic boxcar li.</p>
+			  </div>
+			  <div id="tab4" class="tab-panel">
+			    <h2>Contact</h2>
+			    <h3><a href="#">www.htmldrive.net</a></h3>
+			    <p>Grandma been has bankrupt said hospitality fence everlast rodeo redblooded chitlins marshal. Boobtube soap her hootch lordy cow, rattler. </p>
+			    <p>Rottgut havi gnorant go, hee-haw shiney jail fetched hillbilly h Bacon no cowpoke tobaccee horse water rightly trailer tools git hillbilly. </p>
+			    <p>Jezebel had whiskey snakeoil, a , skanky aunt townfolk fetched. Fit tractor, them broke aski  rattler fell heffer, been tax-collectors buffalo. Quarrel confounded fence wagon trailer, moonshine wuz, city-sl  </p>
+			  </div>
+			</div>
+		</div>
+		
   </div>
-  <footer>
-    <p layout:fragment="footer">This is some footer content
-      from content page 1</p>
-  </footer>
+  
+  
+  
+ 
+ 
 </body>
 </html>

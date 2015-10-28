@@ -6,20 +6,355 @@
 <head>
 <title>Content page 1</title>
 
-<link rel="stylesheet" type="text/css" href="http://localhost:3001/public/docs/index/bundle.css" th:href="@{http://localhost:3001/public/docs/index/bundle.css}" />
-<script type="text/javascript" th:src="@{http://localhost:3001/public/docs/index/bundle.js}"></script>
+<link rel="stylesheet" type="text/css" th:href="@{http://localhost:3002/public/purchase/baitiao/bundle.css}" />
+<script type="text/javascript" th:src="@{http://localhost:3002/public/purchase/baitiao/bundle.js}"></script>
+<style type="text/css">
+	
 
+
+</style>
 </head>
 <body>
 
-  <!-- https://github.com/ultraq/thymeleaf-layout-dialect -->
-  <!-- http://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#what-is-thymeleaf -->
+  
   <div layout:fragment="content">
- 	 baitiao.html
+ 	 <div class="container baitiao">
+ 	 	<div class="container-title">我的程程白条</div>
+ 	 	
+ 	 	<div class="container">
+ 	 		<div>
+ 	 		<div class="col-md-4 header-hd header-left">
+			    <ul class="list list-static">
+				  <li>近七日待付款</li>
+				  <li>20000</li>
+				   <li>下次还账日期：<span>2015-12-12</span></li>
+				 </ul>
+			</div>
+			
+			<div class="col-md-4 header-hd header-center">
+			    <ul class="list list-static">
+				  <li>白条可用额度</li>
+				  <li>20000</li>
+				  <li>白条总额度:999999</li>
+				 </ul>
+			</div>
+			
+			<div class="col-md-4 header-hd header-right">
+				<div class="header-right-hd">
+					<button type="button" class="btn btn-secondary">进入分期游专区</button>
+				</div>
+			    <div class="header-right-center">
+			    	<button type="button" class="btn btn-secondary">绑定银行卡</button>
+			    </div>
+			    <div class="header-right-footer">您已经绑定2张银行卡</div>
+			</div>
+			
+ 	 	</div>
+ 	 	<div class="content">
+ 	 		<div class="col-md-9 content-left" >
+ 	 			<div style="padding: 10px;clear:both;padding-bottom: 0;">
+		 	 		<p style="text-align: right;" th:if="${1==1}">您的信用良好，不存在逾期，请继续保持哦</p>
+		 	 	</div>
+		 	 	<div style="padding:0 0 20px 20px;">程程白条账单</div>
+		 	 	
+		 	 	<div class="tabs" data-tabs="{'autoRotate': false, 'launchOnMouseEnter': false}">
+					<ul class="tabs-nav nav nav-tabs">
+					  <li class="active"><a href="#tab1">待付款</a></li>
+					  <li><a href="#tab2">已退款</a></li>
+					  <li><a href="#tab3">已付款</a></li>
+					  <li><a href="#tab4">已逾期</a></li>
+					</ul>
+					<div class="tabs-bd">
+					  <div id="tab1" class="tab-panel active">
+					    	<div>
+								<ul class="timeline">
+								  <li class="timeline-item">
+								    <div style="display:block;" class="timeline-item-tail"></div>
+								    <div class="timeline-item-head success"></div>
+								    <div class="timeline-item-content">
+								      	<div class="container">
+								      		<p>还剩8天</p>
+											<div th:replace="recommend :: 
+										 	   	recommend-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+										 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG1')"></div>
+										</div>
+										
+								    </div>
+								  </li>
+								  <li class="timeline-item">
+								    <div style="display:block;" class="timeline-item-tail"></div>
+								    <div class="timeline-item-head warning"></div>
+								    <div class="timeline-item-content">
+								      <p>技术测试异常1</p>
+								      <p>技术测试异常2</p>
+								      <p>技术测试异常3 2015-09-01</p>
+								    </div>
+								  </li>
+								  <li class="timeline-item">
+								    <div style="display:block;" class="timeline-item-tail"></div>
+								    <div class="timeline-item-head danger"></div>
+								    <div class="timeline-item-content">
+								      <p>技术测试异常1</p>
+								      <p>技术测试异常2</p>
+								      <p>技术测试异常3 2015-09-01</p>
+								    </div>
+								  </li>
+								  <li class="timeline-item">
+								    <div style="display:none;" class="timeline-item-tail"></div>
+								    <div class="timeline-item-head info"></div>
+								    <div class="timeline-item-content">
+								      <p>技术测试异常1</p>
+								      <p>技术测试异常2</p>
+								      <p>技术测试异常3 2015-09-01</p>
+								    </div>
+								  </li>
+								</ul>
+							   
+							</div>
+					    
+					  </div>
+					  <!-- 已退款 -->
+					  <div id="tab2" class="tab-panel">
+					    <table class="table table-bordered">
+						    <thead>
+						        <tr>
+						            <th>退款订单</th>
+						            <th>订单编号</th>
+						            <th>退款金额（元）</th>
+						            <th>退款状态</th>
+						            <th>退款成功时间</th>
+						            <th>退款申请时间</th>
+						        </tr>
+						    </thead>
+						    <tbody>
+						        <tr>
+						            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+						            <td>8453169568</td>
+						            <td>84531695.68</td>
+						            <td>完成</td>
+						            <td>2015-9-11</td>
+						            <td>2015-9-11</td>
+						        </tr>
+						        <tr>
+						            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+						            <td>8453169568</td>
+						            <td>84531695.68</td>
+						            <td>完成</td>
+						            <td>2015-9-11</td>
+						            <td>2015-9-11</td>
+						        </tr>
+						        <tr>
+						           <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+						            <td>8453169568</td>
+						            <td>84531695.68</td>
+						            <td>完成</td>
+						            <td>2015-9-11</td>
+						            <td>2015-9-11</td>
+						        </tr>
+						        <tr>
+						            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+						            <td>8453169568</td>
+						            <td>84531695.68</td>
+						            <td>完成</td>
+						            <td>2015-9-11</td>
+						            <td>2015-9-11</td>
+						        </tr>
+						        <tr>
+						            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+						            <td>8453169568</td>
+						            <td>84531695.68</td>
+						            <td>完成</td>
+						            <td>2015-9-11</td>
+						            <td>2015-9-11</td>
+						        </tr>
+						    </tbody>
+						 </table>
+						
+						<div data-pagination="{'simple': false, 'current': 5, 'pageSize': 10, 'total': 100, 'showQuickJumper': true, 'showSizeChanger': true}">....</div>
+					 </div>
+					 
+					 <!-- 已付款 -->
+					  <div id="tab3" class="tab-panel">
+					  		
+					  		<table class="table table-bordered">
+							    <thead>
+							        <tr>
+							            <th>白条订单</th>
+							            <th>订单编号</th>
+							            <th>还款金额（元）</th>
+							            <th>还款期数</th>
+							            <th>还款时间</th>
+							            <th>还款状态</th>
+							            <th>额度变化（元）</th>
+							            <th></th>
+							        </tr>
+							    </thead>
+							    <tbody>
+							        <tr>
+							            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+							            <td>8453169568</td>
+							            <td>84531695.68</td>
+							            <td>3期</td>
+							            <td>2015-9-11</td>
+							            <td>已还款</td>
+							            <td>+2536.14</td>
+							            <td><button type="button" class="btn btn-secondary">还款详情</button></td>
+							        </tr>
+							        <tr>
+							            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+							            <td>8453169568</td>
+							            <td>84531695.68</td>
+							            <td>3期</td>
+							            <td>2015-9-11</td>
+							            <td>已还款</td>
+							            <td>+2536.14</td>
+							            <td><button type="button" class="btn btn-secondary">还款详情</button></td>
+							        </tr>
+							        <tr>
+							            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+							            <td>8453169568</td>
+							            <td>84531695.68</td>
+							            <td>3期</td>
+							            <td>2015-9-11</td>
+							            <td>已还款</td>
+							            <td>+2536.14</td>
+							            <td><button type="button" class="btn btn-secondary">还款详情</button></td>
+							        </tr>
+							        <tr>
+							            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+							            <td>8453169568</td>
+							            <td>84531695.68</td>
+							            <td>3期</td>
+							            <td>2015-9-11</td>
+							            <td>已还款</td>
+							            <td>+2536.14</td>
+							            <td><button type="button" class="btn btn-secondary">还款详情</button></td>
+							        </tr>
+							        
+							    </tbody>
+							 </table>
+							
+							<div data-pagination="{'simple': false, 'current': 5, 'pageSize': 10, 'total': 100, 'showQuickJumper': true, 'showSizeChanger': true}">....</div>
+					  		
+					  		
+					  		
+					  		
+					  </div>
+					  <!--  已逾期 -->
+					  <div id="tab4" class="tab-panel">
+					  		
+					  		<table class="table table-bordered">
+							    <thead>
+							        <tr>
+							            <th>逾期订单</th>
+							            <th>订单编号</th>
+							            <th>逾期期数</th>
+							            <th>逾期本金(¥)</th>
+							            <th>逾期滞纳金(元)</th>
+							            <th>逾期还款状态</th>
+							            <th>还款时间</th>
+							            <th></th>
+							        </tr>
+							    </thead>
+							    <tbody>
+							        <tr>
+							            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+							            <td>8453169568</td>
+							            <td>第3月</td>
+							            <td>300.00</td>
+							            <td>200.00</td>
+							            <td>已还</td>
+							            <td>2015-12-12</td>
+							            <td></td>
+							        </tr>
+							       <tr>
+							            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+							            <td>8453169568</td>
+							            <td>第3月</td>
+							            <td>300.00</td>
+							            <td>200.00</td>
+							            <td>未还</td>
+							            <td>2015-12-12</td>
+							            <td><button type="button" class="btn btn-secondary">还款</button></td>
+							        </tr>
+							        <tr>
+							            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+							            <td>8453169568</td>
+							            <td>第3月</td>
+							            <td>300.00</td>
+							            <td>200.00</td>
+							            <td>未还</td>
+							            <td>2015-12-12</td>
+							            <td><button type="button" class="btn btn-secondary">还款</button></td>
+							        </tr>
+							        <tr>
+							            <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+							            <td>8453169568</td>
+							            <td>第3月</td>
+							            <td>300.00</td>
+							            <td>200.00</td>
+							            <td>未还</td>
+							            <td>2015-12-12</td>
+							            <td><button type="button" class="btn btn-secondary">还款</button></td>
+							        </tr>
+							        
+							    </tbody>
+							 </table>
+							
+							<div data-pagination="{'simple': false, 'current': 5, 'pageSize': 10, 'total': 100, 'showQuickJumper': true, 'showSizeChanger': true}">....</div>
+					  		
+					  		
+					  		
+					  </div>
+					</div>
+				</div>
+		 	 	
+		 	 	
+		 	 	
+		 	 	
+		 	 	
+ 	 		</div>
+ 	 		
+ 	 		<div class="col-md-3 content-right" style="border-left: 1px solid #ccc;height: 100%;">
+ 	 			<div style="font-size: 30px; text-align: center; margin:20px 0 20px 0">热门分期游</div>
+ 	 			<div th:replace="recommend :: 
+				 	   	recommend-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+				 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG1')"></div>
+				  
+				  <div th:replace="recommend :: 
+				 	   	recommend-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+				 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG1')"></div>
+				  
+				  <div th:replace="recommend :: 
+				 	   	recommend-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+				 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG1')"></div>
+				  
+				  <div th:replace="recommend :: 
+				 	   	recommend-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+				 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG1')"></div>
+				  
+				  <div th:replace="recommend :: 
+				 	   	recommend-1(img='http://localhost:4002/public/home/assets/activated/mascot.png',
+				 	   		info='【歌诗达邮轮-维多利亚号】4晚5日游 月付 160元*10期 XG1')"></div>
+ 	 		</div>
+ 	 	
+ 	 	</div>
+ 	 	
+ 	 	</div>
+ 	 	
+ 	 	
+ 	 	
+ 	 	
+ 	 	
+ 	 	
+ 	 
+ 	 </div>
+ 	 
+ 	 
+ 	 
+ 	 
+ 	 
   </div>
-  <footer>
-    <p layout:fragment="footer">This is some footer content
-      from content page 1</p>
-  </footer>
+  
 </body>
 </html>
