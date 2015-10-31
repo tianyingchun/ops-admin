@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<title>布局header</title>
+<title>公用头部</title>
 </head>
 <body layout:fragment="header">
-	<div class="clearfix"></div>
-	<div class="header">
-		<div class="header" style="display: block;">商户HEADER0</div>
-	</div>
+  <header class="topbar topbar-inverse">
+    <h1 class="topbar-brand">
+      <a
+        href="/"
+        class="text-ir">运营后台管理系统</a><span class="badge badge-warning">ops</span>
+    </h1>
+    <ul class="nav nav-pills topbar-nav">
+      <li class=""><a href="/licai">理财栏目 UI</a></li>
+      <li class="active"><a>分期栏目</a></li>
+    </ul>
+  </header>
 </body>
 </html>

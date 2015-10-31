@@ -1,0 +1,152 @@
+.topbar-brand {
+  position: relative;
+  margin-right: 20px;
+  z-index: 10;
+  .text-ir {
+    display: block;
+    margin-right: 10px;
+    height: 50px;
+    width: 80px;
+    background: url(../assets/dashboard.png) no-repeat left center;
+    background-size: 60px auto;
+  }
+  .badge {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    z-index: 20;
+  }
+}
+
+.layout-topnav {
+  position: relative;
+  overflow: initial !important;
+  z-index: 100;
+  .topbar {
+    margin-bottom: 0;
+  }
+}
+
+.page-body {
+  font-size: 14px;
+}
+
+.scrollarea .scrollarea-content {
+  padding: 5px;
+  padding-right: 0;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-left-dock {
+  min-width: 230px;
+  .menu-submenu {
+    margin-bottom: 10px;
+  }
+  &.menu {
+    border: 0;
+  }
+  &.menu-sub {
+    color: #777;
+    .menu-item {
+      font-style: 16px;
+    }
+  }
+  .menu-title-en {
+    font-size: 10px;
+    color: #999;
+    font-weight: 400;
+    margin-left: 5px;
+    vertical-align: bottom;
+  }
+  .menu-submenu-title {
+    font-size: 16px;
+    font-weight: 700;
+    padding-left: 8px;
+    color: #555;
+    border-left: 3px solid #DCD8D8;
+    &:after {
+      display: none;
+    }
+  }
+  .menu-submenu-open {
+    .menu-submenu-title {
+      border-left-color: #3bb4f2;
+    }
+  }
+  a {
+    color: #777;
+    font-size: 16px;
+    display: block;
+  }
+}
+
+.page-content {
+  overflow: hidden;
+  padding-top: 10px;
+  word-wrap: break-word;
+  counter-reset: header2;
+}
+
+.page-content {
+  >h2 {
+    counter-increment: header2;
+    counter-reset: header3;
+    &:before {
+      content: counter(header2)". "
+    }
+  }
+}
+
+.page-content {
+  >h3 {
+    counter-increment: header3;
+    counter-reset: header4;
+    &:before {
+      content: counter(header2)"." counter(header3)" "
+    }
+  }
+}
+
+.page-content {
+  >h4 {
+    counter-increment: header4;
+    &:before {
+      content: counter(header2)"." counter(header3)"." counter(header4)" "
+    }
+  }
+}
+
+.page-content {
+  >h2:before,
+  >h3:before,
+  >h4:before {
+    color: #888;
+    font-weight: 400
+  }
+}
+
+.footer {
+  padding: 10px 15px;
+  font-size: 1.4rem;
+  background: #555;
+  color: #999;
+}
+
+.ui-layout-pane {
+  padding: 0;
+  border: 0;
+}
+
+.ui-layout-toggler-west-closed .content {
+  color: #033;
+  font-size: 12px !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  padding-right: 1px;
+  font-family: Lucida Grande, Lucida Sans, Arial, Helvetica, sans-serif;
+}

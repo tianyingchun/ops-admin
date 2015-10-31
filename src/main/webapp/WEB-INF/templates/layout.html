@@ -1,22 +1,93 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">后台管理系统</title>
 <meta charset="UTF-8" />
-<link rel="stylesheet" type="text/css" href="http://localhost:4002/shared/less/public/common.css"/>
-<script type="text/javascript" src="http://localhost:4002/public/vendors/esshim/es5-shim.min.js"></script>
-<script type="text/javascript" src="http://localhost:4002/public/vendors/jquery/jquery.min.js"></script>
+<link
+  rel="stylesheet"
+  type="text/css"
+  th:href="@{'/resources/public/common.min.css'}" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  th:href="@{'/resources/public/plugins/layout/layout-default-latest.css'}" />
+ <link
+  rel="stylesheet"
+  type="text/css"
+  th:href="@{'/resources/public/styles/frame.css'}" />
+<script
+  type="text/javascript"
+  th:src="@{'/resources/public/scripts/jquery/jquery.min.js'}"></script>
+<script
+  type="text/javascript"
+  th:src="@{'/resources/public/plugins/jquery-ui-latest.js'}"></script>
+<script
+  type="text/javascript"
+  th:src="@{'/resources/public/plugins/layout/jquery.layout-latest.js'}"></script>
 </head>
 <body>
-	<div layout:include="header::header"></div>
-	<div class="mainwrapper">
-		<div layout:fragment="content">
-			<p>Page content goes here</p>
-		</div>
-	</div>
-	<div layout:include="footer::footer"></div>
-	<script layout:fragment="script"></script>
+  <div class="ui-layout-north">
+    <div class="layout-topnav" layout:include="header::header"></div>
+  </div>
+  <div class="ui-layout-center content">
+    <div layout:fragment="content">place page content here!</div>
+  </div>
+  <div
+    class="ui-layout-west"
+    style="display: none;">
+    <div
+      class="ui-layout-content"
+      style="overflow: auto;">
+      <ul>
+        <li>2222</li>
+        <li>2222</li>
+        <li>2222</li>
+        <li>2222</li>
+        <li>2222</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ui-layout-south">
+    <div class="footer" layout:include="footer::footer"></div>
+  </div>
+  <script th:inline="javascript">
+		/*<![CDATA[*/
+		var pageLayout;
+		var config = {
+			scrollToBookmarkOnLoad : false // handled by custom code so can 'unhide' section first
+			,
+			defaults : {},
+			north : {
+				size : "auto",
+				spacing_open : 0,
+				closable : false,
+				resizable : false
+			},
+			south : {
+				size : "auto",
+				spacing_open : 0,
+				closable : false,
+				resizable : false
+			},
+			west : {
+				size : 250,
+				spacing_closed : 22,
+				togglerLength_closed : 140,
+				togglerAlign_closed : "top",
+				togglerContent_closed : "C<BR>o<BR>n<BR>t<BR>e<BR>n<BR>t<BR>s",
+				togglerTip_closed : "Open & Pin Contents",
+				sliderTip : "Slide Open Contents",
+				slideTrigger_open : "mouseover"
+			}
+		}
+		$(function() {
+			// create page layout
+			pageLayout = $('body').layout(config);
+		});
+		/*]]>*/
+	</script>
 </body>
 </html>
