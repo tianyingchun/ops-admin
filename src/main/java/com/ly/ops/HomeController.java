@@ -36,4 +36,32 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/licai", method = RequestMethod.GET)
+	public String licai(Locale locale, Model model) {
+		logger.info("Welcome licai! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "licai/index";
+	}
+	
+	@RequestMapping(value = "/fenqi", method = RequestMethod.GET)
+	public String fenqi(Locale locale, Model model) {
+		logger.info("Welcome fenqi! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "fenqi/index";
+	}
+	
 }

@@ -14,7 +14,7 @@
   rel="stylesheet"
   type="text/css"
   th:href="@{'/resources/public/plugins/layout/layout-default-latest.css'}" />
- <link
+<link
   rel="stylesheet"
   type="text/css"
   th:href="@{'/resources/public/styles/frame.css'}" />
@@ -27,67 +27,44 @@
 <script
   type="text/javascript"
   th:src="@{'/resources/public/plugins/layout/jquery.layout-latest.js'}"></script>
+<script
+  type="text/javascript"
+  th:src="@{'/resources/public/plugins/collapse/jquery.collapse.js'}"></script>
+<script
+  type="text/javascript"
+  th:src="@{'/resources/public/plugins/collapse/jquery.collapse_cookie_storage.js'}"></script>
+<script
+  type="text/javascript"
+  th:src="@{'/resources/public/plugins/collapse/jquery.collapse_storage.js'}"></script>
+
+<script
+  type="text/javascript"
+  th:src="@{'/resources/public/scripts/global.js'}"></script>
 </head>
 <body>
   <div class="ui-layout-north">
-    <div class="layout-topnav" layout:include="header::header"></div>
+    <div
+      class="layout-topnav"
+      layout:fragment="header"></div>
   </div>
-  <div class="ui-layout-center content">
-    <div layout:fragment="content">place page content here!</div>
+  <div class="ui-layout-center">
+    <div
+      layout:fragment="content"
+      class="page-content">place page content here!</div>
   </div>
   <div
     class="ui-layout-west"
     style="display: none;">
     <div
       class="ui-layout-content"
-      style="overflow: auto;">
-      <ul>
-        <li>2222</li>
-        <li>2222</li>
-        <li>2222</li>
-        <li>2222</li>
-        <li>2222</li>
-      </ul>
-    </div>
+      style="overflow: auto;"
+      layout:fragment="dockmenus">put your left dock menu here
+      using layout:fragment</div>
   </div>
   <div class="ui-layout-south">
-    <div class="footer" layout:include="footer::footer"></div>
+    <div
+      class="footer"
+      layout:include="footer::footer"></div>
   </div>
-  <script th:inline="javascript">
-		/*<![CDATA[*/
-		var pageLayout;
-		var config = {
-			scrollToBookmarkOnLoad : false // handled by custom code so can 'unhide' section first
-			,
-			defaults : {},
-			north : {
-				size : "auto",
-				spacing_open : 0,
-				closable : false,
-				resizable : false
-			},
-			south : {
-				size : "auto",
-				spacing_open : 0,
-				closable : false,
-				resizable : false
-			},
-			west : {
-				size : 250,
-				spacing_closed : 22,
-				togglerLength_closed : 140,
-				togglerAlign_closed : "top",
-				togglerContent_closed : "C<BR>o<BR>n<BR>t<BR>e<BR>n<BR>t<BR>s",
-				togglerTip_closed : "Open & Pin Contents",
-				sliderTip : "Slide Open Contents",
-				slideTrigger_open : "mouseover"
-			}
-		}
-		$(function() {
-			// create page layout
-			pageLayout = $('body').layout(config);
-		});
-		/*]]>*/
-	</script>
 </body>
 </html>
